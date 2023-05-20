@@ -33,8 +33,6 @@ public class KillService {
         return KillResponseDto.builder()
                 .id(randomKill.getId())
                 .image(randomKill.getImage())
-                .title(randomKill.getTitle())
-                .content(randomKill.getContent())
                 .build();
     }
 

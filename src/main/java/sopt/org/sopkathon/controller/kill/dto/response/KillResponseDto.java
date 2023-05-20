@@ -10,6 +10,6 @@ public class KillResponseDto {
 
     private Long id;
     private String image;
-    private String title;
-    private String content;
+//    private String title;
+//    private String content;
 }

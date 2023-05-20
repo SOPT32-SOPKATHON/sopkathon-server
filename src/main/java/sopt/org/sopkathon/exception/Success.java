@@ -12,7 +12,10 @@ public enum Success {
     /**
      * 200 OK
      */
-    GET_A_DETAILS_SUCCESS(HttpStatus.OK, "상세정보 조회 성공")
+
+    GET_SCORE_SUCCESS(HttpStatus.OK, "모기 지수 불러오기 성공"),
+    GET_RANDOM_KILL_SUCCESS(HttpStatus.OK, "모기 퇴치법 랜덤 조회 성공")
+
 
     /**
      * 201 CREATED

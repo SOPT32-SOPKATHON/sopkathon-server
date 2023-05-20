@@ -17,6 +17,7 @@ public enum Error {
     /**
      * 404 NOT FOUND
      */
+    NOT_FOUND_RANDOM_KILL_EXCEPTION(HttpStatus.NOT_FOUND, "모기 퇴치법이 하나도 존재하지 않습니다"),
 
     /**
      * 500 INTERNAL SERVER ERROR

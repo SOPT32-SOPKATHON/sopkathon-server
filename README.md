@@ -8,12 +8,10 @@
 ## 🌸 Contributors 섭팟이들
 |                             이동섭                             |                               안채린                        |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Backend/assets/67463603/3c92f168-1ff0-42a4-a91f-9fbd11189d35" width="300" height="265"/> | <img src="(이미지 url)" width="300" height="265"/>  |
+| <img src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Backend/assets/67463603/3c92f168-1ff0-42a4-a91f-9fbd11189d35" width="300" height="265"/> | <img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/72637095/98e83aa6-492c-4e78-9f55-c0fa02555253" width="300" height="265"/>  |
 |              [ddongseop](https://github.com/ddongseop)               |             [chaerin00](https://github.com/chaerin00)              |
 
 <hr>
-
-
 
 ## ⭐️ Role
 

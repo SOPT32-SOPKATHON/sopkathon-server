@@ -1,7 +1,12 @@
 package sopt.org.sopkathon.service;
 
 import lombok.RequiredArgsConstructor;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
+import sopt.org.sopkathon.controller.score.dto.ScoreResponseDto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +18,7 @@ import java.net.URLEncoder;
 @Service
 @RequiredArgsConstructor
 public class ScoreService {
-    public void getScore() throws IOException {
+    public ScoreResponseDto getScore() throws IOException {
         StringBuilder urlBuilder = new StringBuilder("http://openapi.seoul.go.kr:8088");
         urlBuilder.append("/" + URLEncoder.encode("485577456d61636831303348776c6c58", "UTF-8"));
         urlBuilder.append("/" + URLEncoder.encode("json", "UTF-8"));
@@ -44,16 +49,29 @@ public class ScoreService {
         }
         rd.close();
         conn.disconnect();
-        System.out.println(sb.toString());
 
-//        JSONParser jsonParser = new JSONParser();
-//        try {
-//            JSONObject jsonObject = (JSONObject) jsonParser.parse(decode);
-//            return (Long) jsonObject.get("id");
-//        } catch (ParseException e) {
-//            throw new InvalidTokenException();
-//        }
+        JSONParser jsonParser = new JSONParser();
+        ScoreResponseDto response = null;
+        try {
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(sb.toString());
 
+            JSONObject result = (JSONObject) jsonObject.get("MosquitoStatus");
+            JSONArray row = (JSONArray) result.get("row");
+            JSONObject data = (JSONObject) row.get(0);
+
+            System.out.println(Double.parseDouble(data.get("MOSQUITO_VALUE_HOUSE").toString()));
+
+            response = ScoreResponseDto.builder()
+                    .date("2023-05-20")
+                    .houseScore(Double.parseDouble(data.get("MOSQUITO_VALUE_HOUSE").toString()))
+                    .parkScore(Double.parseDouble(data.get("MOSQUITO_VALUE_PARK").toString()))
+                    .waterScore(Double.parseDouble(data.get("MOSQUITO_VALUE_WATER").toString()))
+                    .build();
+
+
+        } catch (ParseException e) {
+        }
+        return response;
     }
 
     ;

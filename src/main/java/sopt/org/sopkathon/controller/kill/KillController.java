@@ -33,7 +33,8 @@ public class KillController {
 
     @PatchMapping("/{killId}/vote")
     @ResponseStatus(HttpStatus.OK)
-    public void editRankScore(@PathVariable final Long killId, @RequestBody EditKillRankScoreRequestDto request) {
-        killService.editKillRankScore(killId, request.getType());
+    public ApiResponse<RankKillResponseDto> editRankScore(@PathVariable final Long killId, @RequestBody EditKillRankScoreRequestDto request) {
+        RankKillResponseDto response = killService.editKillRankScore(killId, request.getType());
+        return ApiResponse.success(Success.PATCH_KILL_RANK_SCORE_SUCCESS, response);
     }
 }

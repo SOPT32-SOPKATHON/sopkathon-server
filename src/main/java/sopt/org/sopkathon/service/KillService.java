@@ -54,10 +54,10 @@ public class KillService {
 
     }
 
-    public void editKillRankScore(Long killId, String type) {
+    public RankKillResponseDto editKillRankScore(Long killId, String type) {
         Optional<Kill> kill = Optional.ofNullable(killRepository.findById(killId)
                 .orElseThrow(() -> new NotFoundKillException(Error.NOT_FOUND_KILL_EXCEPTION)));
-
+        RankKillResponseDto response = null;
         if (kill.isPresent()) {
             Kill data = kill.get();
             if (type.equals("like")) {
@@ -68,9 +68,17 @@ public class KillService {
                 throw new InvalidTypeException(Error.INVALID_TYPE_EXCEPTION);
             }
             killRepository.save(data);
+            response = RankKillResponseDto.builder()
+                    .id(data.getId())
+                    .title(data.getTitle())
+                    .content(data.getContent())
+                    .image(data.getImage())
+                    .likeCount(data.getLikeCount())
+                    .dislikeCount(data.getDislikeCount())
+                    .build();
         }
 
-
+        return response;
     }
 
 }

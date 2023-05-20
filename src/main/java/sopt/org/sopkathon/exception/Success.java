@@ -16,7 +16,8 @@ public enum Success {
     GET_SCORE_SUCCESS(HttpStatus.OK, "모기 지수 불러오기 성공"),
     GET_RANDOM_KILL_SUCCESS(HttpStatus.OK, "모기 퇴치법 랜덤 조회 성공"),
     GET_PREVENTION_LIST_SUCCESS(HttpStatus.OK, "모기 예방법 리스트 조회 성공"),
-    GET_KILL_LIST_SUCCESS(HttpStatus.OK, "모기 퇴치법 랭킹 리스트 조회 성공")
+    GET_KILL_LIST_SUCCESS(HttpStatus.OK, "모기 퇴치법 랭킹 리스트 조회 성공"),
+    PATCH_KILL_RANK_SCORE_SUCCESS(HttpStatus.OK, "모기 퇴치법 랭킹 리스트 조회 성공")
 
 
     /**

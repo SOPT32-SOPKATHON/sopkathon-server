@@ -66,6 +66,7 @@ public class KillService {
     public RankKillResponseDto editKillRankScore(Long killId, String type) {
         Optional<Kill> kill = Optional.ofNullable(killRepository.findById(killId)
                 .orElseThrow(() -> new NotFoundKillException(Error.NOT_FOUND_KILL_EXCEPTION)));
+
         RankKillResponseDto response = null;
         if (kill.isPresent()) {
             Kill data = kill.get();

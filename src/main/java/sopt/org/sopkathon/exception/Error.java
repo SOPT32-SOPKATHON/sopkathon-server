@@ -17,6 +17,7 @@ public enum Error {
     /**
      * 404 NOT FOUND
      */
+    NOT_FOUND_EXCEPTION(HttpStatus.NOT_FOUND, "찾을 수 없는 요청입니다"),
     NOT_FOUND_RANDOM_KILL_EXCEPTION(HttpStatus.NOT_FOUND, "모기 퇴치법이 하나도 존재하지 않습니다"),
     NOT_FOUND_RANDOM_PREVENTION_EXCEPTION(HttpStatus.NOT_FOUND, "모기 예방법이 하나도 존재하지 않습니다"),
     NOT_FOUND_KILL_EXCEPTION(HttpStatus.NOT_FOUND, "존재하지 않는 모기 퇴치법 입니다"),

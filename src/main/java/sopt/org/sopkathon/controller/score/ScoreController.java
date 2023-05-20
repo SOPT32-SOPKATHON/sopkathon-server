@@ -17,6 +17,6 @@ public class ScoreController {
 
     @GetMapping("/score")
     public ApiResponse<ScoreResponseDto> getScore() throws IOException {
-        return ApiResponse.success(Success.GET_A_DETAILS_SUCCESS, scoreService.getScore());
+        return ApiResponse.success(Success.GET_SCORE_SUCCESS, scoreService.getScore());
     }
 }

@@ -51,27 +51,23 @@ public class ScoreService {
         conn.disconnect();
 
         JSONParser jsonParser = new JSONParser();
-        ScoreResponseDto response = null;
+        JSONObject data = new JSONObject();
         try {
             JSONObject jsonObject = (JSONObject) jsonParser.parse(sb.toString());
 
             JSONObject result = (JSONObject) jsonObject.get("MosquitoStatus");
             JSONArray row = (JSONArray) result.get("row");
-            JSONObject data = (JSONObject) row.get(0);
-
-            System.out.println(Double.parseDouble(data.get("MOSQUITO_VALUE_HOUSE").toString()));
-
-            response = ScoreResponseDto.builder()
-                    .date("2023-05-20")
-                    .houseScore(Double.parseDouble(data.get("MOSQUITO_VALUE_HOUSE").toString()))
-                    .parkScore(Double.parseDouble(data.get("MOSQUITO_VALUE_PARK").toString()))
-                    .waterScore(Double.parseDouble(data.get("MOSQUITO_VALUE_WATER").toString()))
-                    .build();
+            data = (JSONObject) row.get(0);
 
 
         } catch (ParseException e) {
         }
-        return response;
+        return ScoreResponseDto.builder()
+                .date("2023-05-20")
+                .houseScore(Double.parseDouble(data.get("MOSQUITO_VALUE_HOUSE").toString()))
+                .parkScore(Double.parseDouble(data.get("MOSQUITO_VALUE_PARK").toString()))
+                .waterScore(Double.parseDouble(data.get("MOSQUITO_VALUE_WATER").toString()))
+                .build();
     }
 
     ;

@@ -11,6 +11,7 @@ import sopt.org.sopkathon.exception.model.NoRandomKillException;
 import sopt.org.sopkathon.exception.model.NotFoundKillException;
 import sopt.org.sopkathon.infrastructure.KillRepository;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -54,6 +55,8 @@ public class KillService {
 
     }
 
+
+    @Transactional
     public RankKillResponseDto editKillRankScore(Long killId, String type) {
         Optional<Kill> kill = Optional.ofNullable(killRepository.findById(killId)
                 .orElseThrow(() -> new NotFoundKillException(Error.NOT_FOUND_KILL_EXCEPTION)));
@@ -67,7 +70,7 @@ public class KillService {
             } else {
                 throw new InvalidTypeException(Error.INVALID_TYPE_EXCEPTION);
             }
-            killRepository.save(data);
+            
             response = RankKillResponseDto.builder()
                     .id(data.getId())
                     .title(data.getTitle())

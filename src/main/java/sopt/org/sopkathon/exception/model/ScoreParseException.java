@@ -4,12 +4,12 @@ import lombok.Getter;
 import sopt.org.sopkathon.exception.Error;
 
 @Getter
-public class ScoreParseException extends RuntimeException {
+public class ScoreParseException extends WingException {
 
     private final Error error;
 
-    public ScoreParseException(Error error, String message) {
-        super(message);
+    public ScoreParseException(Error error) {
+        super(error);
         this.error = error;
     }
 

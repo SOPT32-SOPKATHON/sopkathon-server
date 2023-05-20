@@ -4,12 +4,12 @@ import lombok.Getter;
 import sopt.org.sopkathon.exception.Error;
 
 @Getter
-public class NotFoundKillException extends RuntimeException {
+public class NotFoundKillException extends WingException {
 
     private final Error error;
 
     public NotFoundKillException(Error error) {
-        super(error.getMessage());
+        super(error);
         this.error = error;
     }
 

@@ -4,12 +4,12 @@ import lombok.Getter;
 import sopt.org.sopkathon.exception.Error;
 
 @Getter
-public class NoRandomPreventionException extends RuntimeException {
+public class NoRandomPreventionException extends WingException {
 
     private final Error error;
 
     public NoRandomPreventionException(Error error) {
-        super(error.getMessage());
+        super(error);
         this.error = error;
     }
 

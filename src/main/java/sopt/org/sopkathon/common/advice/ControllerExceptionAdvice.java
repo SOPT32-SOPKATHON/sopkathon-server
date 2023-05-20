@@ -7,6 +7,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 import sopt.org.sopkathon.common.dto.ApiResponse;
 import sopt.org.sopkathon.exception.Error;
 import sopt.org.sopkathon.exception.model.WingException;
@@ -24,6 +25,15 @@ public class ControllerExceptionAdvice {
     protected ApiResponse handleMethodArgumentNotValidException(final MethodArgumentNotValidException e) {
         FieldError fieldError = Objects.requireNonNull(e.getFieldError());
         return ApiResponse.error(Error.REQUEST_VALIDATION_EXCEPTION, String.format("%s는 %s", fieldError.getField(), fieldError.getDefaultMessage()));
+    }
+
+    /**
+     * 404 NOT_FOUND
+     */
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public ApiResponse handle404(NoHandlerFoundException e) {
+        return ApiResponse.error(Error.NOT_FOUND_EXCEPTION);
     }
 
     /**

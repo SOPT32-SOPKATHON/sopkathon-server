@@ -1,4 +1,4 @@
-package sopt.org.sopkathon.exception.dto;
+package sopt.org.sopkathon.exception.model;
 
 import lombok.Getter;
 import sopt.org.sopkathon.exception.Error;
@@ -8,8 +8,8 @@ public class WingException extends RuntimeException {
 
     private final Error error;
 
-    public WingException(Error error, String message) {
-        super(message);
+    public WingException(Error error) {
+        super(error.getMessage());
         this.error = error;
     }
 

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import sopt.org.sopkathon.common.dto.ApiResponse;
 import sopt.org.sopkathon.exception.Error;
-import sopt.org.sopkathon.exception.dto.WingException;
+import sopt.org.sopkathon.exception.model.WingException;
 
 import java.util.Objects;
 

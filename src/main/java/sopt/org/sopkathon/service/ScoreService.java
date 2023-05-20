@@ -7,6 +7,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 import sopt.org.sopkathon.controller.score.dto.ScoreResponseDto;
+import sopt.org.sopkathon.exception.Error;
+import sopt.org.sopkathon.exception.model.WingException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -58,9 +60,8 @@ public class ScoreService {
             JSONObject result = (JSONObject) jsonObject.get("MosquitoStatus");
             JSONArray row = (JSONArray) result.get("row");
             data = (JSONObject) row.get(0);
-
-
         } catch (ParseException e) {
+            throw new WingException(Error.SCORE_PARSE_ERROR);
         }
         return ScoreResponseDto.builder()
                 .date("2023-05-20")

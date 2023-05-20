@@ -15,6 +15,7 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 @Service
 @RequiredArgsConstructor
@@ -41,13 +42,20 @@ public class KillService {
 
         List<RankKillResponseDto> response = new ArrayList<>();
 
-        rankKillList.forEach(kill -> response.add(RankKillResponseDto.builder()
-                .id(kill.getId())
-                .image(kill.getImage())
-                .title(kill.getTitle())
-                .content(kill.getContent())
-                .likeCount(kill.getLikeCount())
-                .dislikeCount(kill.getDislikeCount()).build()));
+        IntStream.range(0, rankKillList.size())
+                .forEach(idx -> {
+                    Kill kill = rankKillList.get(idx);
+                    response.add(RankKillResponseDto.builder()
+                            .id(kill.getId())
+                            .image(kill.getImage())
+                            .title(kill.getTitle())
+                            .content(kill.getContent())
+                            .likeCount(kill.getLikeCount())
+                            .dislikeCount(kill.getDislikeCount())
+                            .rank(idx + 1) // 인덱스 값 추가
+                            .build());
+                });
+
 
         return response;
 
@@ -68,7 +76,7 @@ public class KillService {
             } else {
                 throw new InvalidTypeException(Error.INVALID_TYPE_EXCEPTION);
             }
-            
+
             response = RankKillResponseDto.builder()
                     .id(data.getId())
                     .title(data.getTitle())

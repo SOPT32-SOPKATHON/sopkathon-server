@@ -1,15 +1,12 @@
 package sopt.org.sopkathon.controller.score.dto;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 @Getter
-@SuperBuilder
+@Builder
 @RequiredArgsConstructor
-@AllArgsConstructor
 public class ScoreResponseDto {
     private final String date;
 

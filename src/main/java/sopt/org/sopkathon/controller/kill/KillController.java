@@ -1,12 +1,12 @@
-package sopt.org.sopkathon.controller;
+package sopt.org.sopkathon.controller.kill;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import sopt.org.sopkathon.common.dto.ApiResponse;
-import sopt.org.sopkathon.controller.dto.response.KillResponseDto;
-import sopt.org.sopkathon.controller.dto.response.RankKillResponseDto;
-import sopt.org.sopkathon.controller.score.dto.EditKillRankScoreRequestDto;
+import sopt.org.sopkathon.controller.kill.dto.request.EditKillRankScoreRequestDto;
+import sopt.org.sopkathon.controller.kill.dto.response.KillResponseDto;
+import sopt.org.sopkathon.controller.kill.dto.response.RankKillResponseDto;
 import sopt.org.sopkathon.exception.Success;
 import sopt.org.sopkathon.service.KillService;
 

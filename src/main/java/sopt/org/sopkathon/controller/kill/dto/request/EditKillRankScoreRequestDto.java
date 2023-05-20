@@ -1,4 +1,4 @@
-package sopt.org.sopkathon.controller.score.dto;
+package sopt.org.sopkathon.controller.kill.dto.request;
 
 import lombok.AccessLevel;
 import lombok.Getter;

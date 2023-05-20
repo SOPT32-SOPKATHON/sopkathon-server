@@ -2,8 +2,8 @@ package sopt.org.sopkathon.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import sopt.org.sopkathon.controller.dto.response.RankKillResponseDto;
-import sopt.org.sopkathon.controller.dto.response.KillResponseDto;
+import sopt.org.sopkathon.controller.kill.dto.response.KillResponseDto;
+import sopt.org.sopkathon.controller.kill.dto.response.RankKillResponseDto;
 import sopt.org.sopkathon.domain.Kill;
 import sopt.org.sopkathon.exception.Error;
 import sopt.org.sopkathon.exception.model.NoRandomKillException;

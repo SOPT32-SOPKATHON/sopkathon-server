@@ -1,9 +1,9 @@
 # 🦟 위잉위잉
-<img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/086ab97f-d66f-4705-b20d-ca6c861f3949" width="300"/>
+> 32기 GO SOPT 솝커톤 모기 퇴치 서비스 위잉위잉 🦟
+
+![Frame 26085890 (1)](https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/72637095/940caec3-8468-464d-8e62-25adff2591f6)
 
 ---
-
-> 32기 GO SOPT 솝커톤 모기 퇴치 서비스 위잉위잉 🦟
 
 ## 🌸 Contributors 섭팟이들
 |                             이동섭                             |                               안채린                        |
@@ -12,6 +12,7 @@
 |              [ddongseop](https://github.com/ddongseop)               |             [chaerin00](https://github.com/chaerin00)              |
 
 <hr>
+<img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/086ab97f-d66f-4705-b20d-ca6c861f3949" width="300"/>
 
 ## ⭐️ Role
 
@@ -22,12 +23,13 @@
 | 공공 API                             | 안채린  |
 | ERD 작성                             | 이동섭, 안채린  |
 | DB 구축                            | 안채린  |
+| EC2 배포                            | 이동섭  |
 
 <hr>
 
 ## 👻 API Docs
 
-### 🔗 [API Docs](https://www.notion.so/go-sopt/5378cd7e23c44a1f9a1c9bbe268e735c?v=70f14215682b4ea49be35cdbd8555da5&pvs=4)
+### 🔗 [API Docs](https://www.notion.so/go-sopt/6-API-81c96c78c2624fc88f1d7ec691de18b5?pvs=4)
 
 
 ## ⭐️ API 담당
@@ -37,8 +39,8 @@
 | 모기지수 불러오기              | [GET] /score                    | 안채린  |
 | 모기 예방법 랜덤하게 하나 불러오기 | [GET] /prevention               | 안채린  |
 | 모기 퇴치법 랜덤하게 하나 불러오기 | [GET] /kill/random              | 이동섭  |
-| 모기 퇴치법 좋아요/싫어요        | [PATCH] /kill/vote              | 이동섭  |
-| 모기 퇴치법 랭킹 불러오기        | [GET] /kill                     | 이동섭, 안채린  |
+| 모기 퇴치법 좋아요/싫어요        | [PATCH] /kill/vote              | 안채린  |
+| 모기 퇴치법 랭킹 불러오기        | [GET] /kill                     | 이동섭  |
 
 <hr>
 
@@ -53,9 +55,12 @@
         🗂 advice
         🗂 dto
     🗂 controller (클라이언트의 요청을 받는 컨트롤러 계층)
-        🗂 dto
-            🗂 request
-            🗂 response
+        🗂 kill
+        🗂 prevention
+        🗂 score
+            🗂 dto
+                🗂 request
+                🗂 response
     🗂 domain (도메인)
     🗂 exception (예외처리)
         🗂 model

@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @Builder
 @RequiredArgsConstructor
-public class PreventionReponseDto {
+public class PreventionResponseDto {
     private final Long id;
 
     private final String title;

@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class EditKillRankScoreRequestDto {
+public class VoteKillRequestDto {
     private String type;
-
-
 }

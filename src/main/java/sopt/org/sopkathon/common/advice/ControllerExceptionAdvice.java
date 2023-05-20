@@ -37,7 +37,7 @@ public class ControllerExceptionAdvice {
     }
 
     /**
-     * Sopt custom error
+     * Wing(our service name) custom error
      */
     @ExceptionHandler(WingException.class)
     protected ResponseEntity<ApiResponse> handleSoptException(WingException e) {

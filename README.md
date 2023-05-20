@@ -1,7 +1,7 @@
 # 🦟 위잉위잉
+<img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/086ab97f-d66f-4705-b20d-ca6c861f3949" width="300"/>
 
 ---
-<img src="(이미지 url)" width="300"/>
 
 > 32기 GO SOPT 솝커톤 모기 퇴치 서비스 위잉위잉 🦟
 
@@ -18,9 +18,10 @@
 | 담당 역할                          | Role |
 |:-------------------------------|:----:|
 | 프로젝트 초기 세팅 후 푸시                | 이동섭  |
-| DB 구축                              | 이동섭  |
+| RDS 세팅                              | 이동섭  |
 | 공공 API                             | 안채린  |
-| ERD 작성                             |       |
+| ERD 작성                             | 이동섭, 안채린  |
+| DB 구축                            | 안채린  |
 
 <hr>
 
@@ -42,7 +43,7 @@
 <hr>
 
 ## 👉️ ERD
-<img width="786" alt="KakaoTalk_Photo_2023-05-19-18-09-17" src="https://github.com/GOSOPT-CDS-TEAM7-DeskTop/Backend/assets/67463603/a1e273aa-8837-4221-8b7f-e22e1a23f3f7">
+<img width="786" src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/bc7001a2-6ad3-49a6-a685-e5a01e4181ee">
 
 ## 👉 Project Structure
 
@@ -80,6 +81,9 @@
     -   항상 local에서 충돌 해결 후 → remote에 올리기
     -   reviewer에 서로 tag후 code-review
     -   comment 전 merge 불가!
+    -   ⭐️ squash and merge 방식 사용
+    -   merge 후 main branch에서 작동 확인
+    -   작동 확인된 기능의 branch는 삭제
 
 
 </aside>

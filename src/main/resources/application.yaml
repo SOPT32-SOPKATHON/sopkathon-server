@@ -11,7 +11,9 @@ spring:
     properties:
       hibernate:
         format_sql:
-
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    
 logging:
   level:
     org:

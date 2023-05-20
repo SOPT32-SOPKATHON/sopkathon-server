@@ -21,6 +21,7 @@ public enum Error {
     /**
      * 500 INTERNAL SERVER ERROR
      */
+    SCORE_PARSE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "모기 지수 데이터 불러오기에 실패했습니다"),
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "알 수 없는 서버 에러가 발생했습니다"),
     ;
 

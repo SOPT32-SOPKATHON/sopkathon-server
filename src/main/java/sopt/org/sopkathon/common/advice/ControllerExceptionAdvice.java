@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import sopt.org.sopkathon.common.dto.ApiResponse;
 import sopt.org.sopkathon.exception.Error;
-import sopt.org.sopkathon.exception.dto.WingException;
+import sopt.org.sopkathon.exception.model.WingException;
 
 import java.util.Objects;
 
@@ -32,7 +32,6 @@ public class ControllerExceptionAdvice {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
     protected ApiResponse<Object> handleException(final Exception e) {
-        System.out.println(e.getMessage());
         return ApiResponse.error(Error.INTERNAL_SERVER_ERROR);
     }
 

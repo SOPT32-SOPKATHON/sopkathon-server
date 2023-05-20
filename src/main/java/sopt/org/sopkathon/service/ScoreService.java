@@ -16,6 +16,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 @RequiredArgsConstructor
@@ -28,8 +30,14 @@ public class ScoreService {
         urlBuilder.append("/" + URLEncoder.encode("1", "UTF-8"));
         urlBuilder.append("/" + URLEncoder.encode("5", "UTF-8"));
 
+        String todayString = ZonedDateTime
+                .now()
+                .format(
+                        DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                );
 
-        urlBuilder.append("/" + URLEncoder.encode("2023-05-20", "UTF-8"));
+
+        urlBuilder.append("/" + URLEncoder.encode(todayString, "UTF-8"));
 
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -52,11 +60,11 @@ public class ScoreService {
         rd.close();
         conn.disconnect();
 
+
         JSONParser jsonParser = new JSONParser();
-        JSONObject data = new JSONObject();
+        JSONObject data;
         try {
             JSONObject jsonObject = (JSONObject) jsonParser.parse(sb.toString());
-
             JSONObject result = (JSONObject) jsonObject.get("MosquitoStatus");
             JSONArray row = (JSONArray) result.get("row");
             data = (JSONObject) row.get(0);
@@ -64,7 +72,7 @@ public class ScoreService {
             throw new WingException(Error.SCORE_PARSE_ERROR);
         }
         return ScoreResponseDto.builder()
-                .date("2023-05-20")
+                .date(data.get("MOSQUITO_DATE").toString())
                 .houseScore(Double.parseDouble(data.get("MOSQUITO_VALUE_HOUSE").toString()))
                 .parkScore(Double.parseDouble(data.get("MOSQUITO_VALUE_PARK").toString()))
                 .waterScore(Double.parseDouble(data.get("MOSQUITO_VALUE_WATER").toString()))

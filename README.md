@@ -1,7 +1,8 @@
-# 🦟 위잉위잉
-> 32기 GO SOPT 솝커톤 모기 퇴치 서비스 위잉위잉 🦟
+# 🧚‍♂️ 위잉위잉
+> 32기 GO SOPT 솝커톤 모기🦟 퇴치 서비스 위잉위잉 
 
-![Frame 26085890 (1)](https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/72637095/940caec3-8468-464d-8e62-25adff2591f6)
+<img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/29be8b9d-3162-4eee-9621-3ed830ea4dee" width="700"/>
+<img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/dc28ad07-a6fc-4ffc-9ecb-74415611aec2" width="700"/>
 
 ---
 
@@ -11,8 +12,9 @@
 | <img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/c064ed3b-4b7f-48e4-9e67-c6cf4c8564b6" width="300"/> | <img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/72637095/98e83aa6-492c-4e78-9f55-c0fa02555253" width="300"/>  |
 |              [ddongseop](https://github.com/ddongseop)               |             [chaerin00](https://github.com/chaerin00)              |
 
-<hr>
 <img src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/086ab97f-d66f-4705-b20d-ca6c861f3949" width="300"/>
+
+<hr>
 
 ## ⭐️ Role
 
@@ -31,7 +33,6 @@
 
 ### 🔗 [API Docs](https://www.notion.so/go-sopt/6-API-81c96c78c2624fc88f1d7ec691de18b5?pvs=4)
 
-
 ## ⭐️ API 담당
 
 | 이름                      | 담당 역할                           | Role |
@@ -45,7 +46,9 @@
 <hr>
 
 ## 👉️ ERD
-<img width="786" src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/bc7001a2-6ad3-49a6-a685-e5a01e4181ee">
+<img width="500" src="https://github.com/SOPT32-SOPKATHON/sopkathon-server/assets/67463603/bc7001a2-6ad3-49a6-a685-e5a01e4181ee">
+
+<hr>
 
 ## 👉 Project Structure
 
